@@ -24,6 +24,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $boards = Boards::all();
     $user = Auth::user();
+
+    if (empty($user->id)) {
+        return redirect(route('/register'));
+    }
     $userboards = $boards->where('user_id', $user->id);
     return view('dashboard', compact('userboards'));
 })->middleware(['auth', 'verified'])->name('dashboard');

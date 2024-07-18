@@ -53,7 +53,6 @@
                 </div>
             </div>
         </div>
-
         <div class="container mx-auto my-10 p-5">
             <div class="flex flex-wrap -m-3">
                 @foreach ($listByBoardId as $list)
